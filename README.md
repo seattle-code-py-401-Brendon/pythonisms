@@ -19,7 +19,7 @@
 
 
 ## UPDATE
-- I modified my Class, I completely removed it and changed it to an inventory system that stores items. T=I used a method decorator that can apply a tax based on if you pass in a boolean to apply the tax or not. I also initialized the item objects and the inventory shelf, so instead of creating a method that prints out the shelp, you simply print the inventory class and it will show all the items in the shelf so you do not need to have any special method to see the inventory (utilized dunder methods for both item object and inventory storage object)
+- I modified my Class, I completely removed it and changed it to an inventory system that stores items. I used a method decorator function that can apply a tax based on if you pass in a boolean to apply the tax or not. I also initialized the item objects and the inventory shelf, so instead of creating a method that prints out the shelf, you simply print the inventory class and it will show all the items in the shelf so you do not need to have any special method to see the inventory (utilized dunder methods for both item object and inventory storage object)
 
 #### How to use your library (where applicable)
 #### Tests
