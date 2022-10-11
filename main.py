@@ -17,16 +17,22 @@ class Inventory:
     new_item = Item(name,price)
     self.shelf.append(new_item)
 
-  def Sell_item(self, name):
+  # ethod is dependant on another method to apply tax
+  def Sell_item(self, name, apply_tax):
     index_loc = 0
     for item in self.shelf:
       index_loc += 1
-      if item.name == name:
-        print(index_loc)
+      if item.name == name and apply_tax is True:
         print(f'Before Tax: {item.price}, After Tax: {self.Apply_tax(item.price)}')
-        self.shelf.pop(index_loc)
+        self.shelf.pop(index_loc -1)
+        return
+      elif apply_tax is False:
+        print(f'Item Price: {item.price}')
+        return self.shelf.pop(index_loc -1)
+    print('item unavailable')
+      
     
-
+# decorator function to apply tax
   def Apply_tax(self, price):
     return price + price * .08
   
@@ -42,7 +48,10 @@ if __name__ == '__main__':
   new_inventory.Stock_item('banana', 9.99)
   new_inventory.Stock_item('pineapple', 4.99)
   new_inventory.Stock_item('milk', 4.99)
-  new_inventory.Sell_item('milk')
+  
+  # you can apply tax or not with boolean
+  new_inventory.Sell_item('banana', True)
 
+# prints out the inventory of as initial. 
   print(new_inventory)
 
